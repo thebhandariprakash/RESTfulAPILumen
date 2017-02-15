@@ -31,3 +31,14 @@ $app->group(['prefix' => 'api/v1'], function($app)
     $app->delete('post/{id}','PostController@deletePost');
 });
 
+
+$app->group(['prefix' => 'api/v1'], function($app)
+{
+    $app->get('comment','CommentController@index');
+    $app->get('comment/{id}','CommentController@getComment');
+    $app->get('postComment/{id}','CommentController@getCommentsByPostId');
+    $app->post('comment','CommentController@createComment');
+    $app->put('comment/{id}','CommentController@updateComment');
+    $app->delete('comment/{id}','CommentController@deleteComment');
+});
+
