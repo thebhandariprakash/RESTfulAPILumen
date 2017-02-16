@@ -24,16 +24,14 @@ $app->get('/', function() use ($app) {
 
 $app->group(['prefix' => 'api/v1'], function($app)
 {
+    //post routs
     $app->get('post','PostController@index');
     $app->get('post/{id}','PostController@getPost');
     $app->post('post','PostController@createPost');
     $app->put('post/{id}','PostController@updatePost');
     $app->delete('post/{id}','PostController@deletePost');
-});
 
-
-$app->group(['prefix' => 'api/v1'], function($app)
-{
+    // post comments route
     $app->get('comment','CommentController@index');
     $app->get('comment/{id}','CommentController@getComment');
     $app->get('postComment/{id}','CommentController@getCommentsByPostId');

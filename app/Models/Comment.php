@@ -15,4 +15,10 @@ class Comment extends Model
 {
     protected $table = 'post_comments';
     protected $fillable = ['post_id', 'comments'];
+
+    function commentsByPostId($postId)
+    {
+        return $this->where('post_id',$postId)
+            ->get();
+    }
 }
