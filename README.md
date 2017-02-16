@@ -7,8 +7,9 @@ Lumen is a “micro-framework” built on top of Laravel’s components created 
 `git clone https://github.com/thebhandariprakash/RESTfulAPILumen.git`
 
 ## Update composer
-`php artisan composer update`
-Updates all dependency
+After cloning the project you can go to the project root from console. `cd /var/www/html`, then run the following command
+`php artisan composer update` this command will updates all dependency.
+
 
 ## Create Database and .env file
 
