@@ -11,12 +11,6 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->version();
-});
-
-
-
 $app->get('/', function() use ($app) {
     return "Lumen RESTful API By Prakash";
 });
