@@ -25,10 +25,10 @@ type `php -S localhost:8000 -t public` in console
 ## Run project in browser
 Type `http://localhost:8000` in your web browser
 
-## test the project
+## Test the project
 You can test project using tools like Post Man. You can install post man chrome plugin into your browser. You can test project as below
 
-1. [http://localhost:8000/api/v1/post
-2. [http://localhost:8000/api/v1/post/2
+1. http://localhost:8000/api/v1/post
+2. http://localhost:8000/api/v1/post/2
  
  
