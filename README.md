@@ -10,23 +10,22 @@ Lumen is a “micro-framework” built on top of Laravel’s components created 
 `php artisan composer update`
 Updates all dependency
 
-## Create .env file
+## Create Database and .env file
 
-create .env file in the root of the project and setup database connection.
+Crate your database and  .env file in the root of the project and setup database connection. for reference check `.env.example` file in the root of the project.
 
-```php APP_ENV=local
- APP_DEBUG=true
- APP_KEY=
- APP_TIMEZONE=UTC
+## Run Migration
 
- DB_CONNECTION=mysql
- DB_HOST=127.0.0.1
- DB_PORT=3306
- DB_DATABASE=blog
- DB_USERNAME=root
- DB_PASSWORD=root
+Once database is created now you can run the `php artisan migrate`  in the project directory from console. This will create the necessary table for the project
 
- CACHE_DRIVER=array
- QUEUE_DRIVER=array
- SESSION_DRIVER=array
- ```
+## Run the project
+
+type `php -S localhost:8000 -t public` in console
+
+## Run project in browser
+`http://localhost:8000`
+
+## test the project
+You can test project using tools like Post Man. You can install post man chrome plugin into your browser.
+ 
+ 
