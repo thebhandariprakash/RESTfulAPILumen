@@ -38,7 +38,7 @@ class PostController extends Controller
     /**
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index(){
+    public function index() {
 
         $Posts  = $this->post->all();
         $posts=Array();
@@ -47,7 +47,7 @@ class PostController extends Controller
         {
             // post items
             $posts['id']=$post->id;
-            $posts['name']=$post->title;
+            $posts['title']=$post->title;
             $posts['post']=$post->post;
             $posts['created_at']=$post->created_at;
             $posts['updated_at']=$post->updated_at;
@@ -75,7 +75,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function getPost($id){
-        $Post  = $this->find($id);
+        $Post  = $this->post->find($id);
         return response()->json($Post);
     }
 
@@ -84,7 +84,9 @@ class PostController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function createPost(Request $request){
-        $Post =$this->create($request->all());
+
+        $request->all();
+        $Post =$this->post->create($request->all());
         return response()->json($Post);
 
     }
@@ -94,7 +96,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function deletePost($id){
-        $Post  = $this->find($id);
+        $Post  = $this->post->find($id);
         $Post->delete();
 
         return response()->json('deleted');
@@ -106,7 +108,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function updatePost(Request $request,$id){
-        $Post  = $this->find($id);
+        $Post  = $this->post->find($id);
         $Post->title = $request->input('title');
         $Post->post = $request->input('post');
         $Post->author_id = $request->input('author_id');
